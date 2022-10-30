@@ -10,7 +10,7 @@ int arr[SIZE];
 int final = -1;
 int frente = -1;
 
-main(){
+int main(){
     int op, wh=1;
     while(wh==1){
         printf("\nMenu\n1 Agregar a cola\n2 Remover de cola\n3 Mostrar cola\n4 salir\nElige una opcion --> ");
@@ -35,6 +35,7 @@ main(){
         }
 
     }
+    return 0;
 }
 
 void agregar(){
