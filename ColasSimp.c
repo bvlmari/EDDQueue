@@ -2,34 +2,73 @@
 
 #define SIZE 100
 
-void enqueue();
-void dequeue();
-void show();
+void agregar();
+void eliminar();
+void imprimir();
 
-int inp_arr[SIZE];
-int Rear = -1;
-int Front = -1;
+int arr[SIZE];
+int final = -1;
+int frente = -1;
 
 main(){
-    int ch;
-    while(1){
-        printf("Menu, 1 enqueue, 2 dequeue, 3 display queue, 4 exit, elige una op");
-        scanf("&d",&ch);
-        switch(ch){
+    int op, wh=1;
+    while(wh==1){
+        printf("\nMenu\n1 Agregar a cola\n2 Remover de cola\n3 Mostrar cola\n4 salir\nElige una opcion --> ");
+        scanf("%d",&op);
+    
+        switch(op){
             case 1:
-                enqueue();
+                agregar();
                 break;
             case 2:
-                dequeue();
+                eliminar();
                 break;
             case 3: 
-                show();
+                imprimir();
                 break;
             case 4:
-                exit(0);
+                wh=0;
+                printf("Saliendo");
+                break;
             default:
                 printf("Opcion incorrecta");
         }
-    }
 
+    }
+}
+
+void agregar(){
+    int in;
+    
+    if (final == SIZE - 1)
+        printf("Sobreflujo");
+    else{
+        if(frente == - 1)
+
+        frente = 0;
+        printf("\nIngrese el elemento a ingresar a la cola -->");
+        scanf("%d", &in);
+        final = final + 1;
+        arr[final] = in;
+    }
+}
+
+void eliminar(){
+    if(frente == - 1 || frente > final)
+        printf("Esta vacio");
+    else{
+        printf("\nElemento eliminado de la cola --> %d\n", arr[frente]);
+        frente = frente + 1;
+    }
+}
+
+void imprimir(){
+    if(frente == -1)
+        printf("Cola vacia \n");
+    else{
+        printf("Cola Actual: \n");
+        for (int i = frente; i<= final; i++)
+            printf("\n%d", arr[i]);
+        printf("\n");
+    }
 }
