@@ -1,4 +1,3 @@
-// Inserting and deleting nodes in a list
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,10 +11,10 @@ struct colas
 };
 
 // sestructura auto referenciada
-typedef struct colas Cola; // sinonimo para struct Cola
-typedef Cola *ptrCola;		// synonym for ListNode*
+typedef struct colas Cola; 
+typedef Cola *ptrCola;	
 
-// prototypes
+// prototipos
 void inicializar(ptrCola *ptrS, int valor, int tipo);
 void agregar(ptrCola *ptrS, int valor, int tipo);
 void borrar(ptrCola *sPtr);
@@ -77,7 +76,6 @@ int main()
 	return 0;
 }
 
-// display program instructions to user
 void instrucciones(void)
 {
 	printf("\n1. Agregra Comanda\n2. Comanda Preparada\n3. Imprimir Comanda\n4. Salir");
